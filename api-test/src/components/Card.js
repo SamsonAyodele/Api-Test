@@ -2,15 +2,23 @@ import React from 'react'
 
 
 
-const Card = (results) => {
+
+const Card = ({results}) => {
+
+    console.log(results)
   return (
-    <CardContainer>
-        <CardBox>
-            <h2> id </h2>
-            <p> title </p>
-            <p> body </p>
-        </CardBox>
-    </CardContainer>
+    <section className='card'>
+        {
+            results?.map((item, index) => (
+            <div className='details' key={index}>
+                <h2> {item?.id} </h2>
+                <p> {item?.title} </p>
+                <p> {item?.body} </p>
+            </div>
+            ) )
+        }
+       
+    </section>
   )
 }
 

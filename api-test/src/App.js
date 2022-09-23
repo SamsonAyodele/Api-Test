@@ -11,9 +11,12 @@ const App = () => {
   const fetchPost = async () => {
     const response = await fetch(process.env.REACT_APP_BASE_URL)
     .then(response => response.json())
+    
     return response
+
   }
   
+
   useEffect(() => {
     fetchPost().then(response => setResults(response))
   }, [])
